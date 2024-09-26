@@ -1,0 +1,141 @@
+/* 전체 페이지에 대한 설정 */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 화면 높이에 맞춤 */
+}
+
+/* 요일을 상단에 고정, 작은 화면에서도 균등하게 배치 */
+.day-of-week {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  margin: 0 auto 5px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* 요일 레이블 스타일 */
+.day-label {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* 일요일은 빨간색 */
+.day-label.sunday {
+  color: red;
+}
+
+/* 토요일은 파란색 */
+.day-label.saturday {
+  color: blue;
+}
+
+/* 날짜 탭 스타일 */
+.date-tabs-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.date-tabs {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 80px);
+  box-sizing: border-box;
+}
+
+.date-tab {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+}
+
+.date-tab:last-child {
+  border-right: none;
+}
+
+/* 선택된 날짜 스타일 */
+.selected {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* 스크롤 가능하도록 설정 */
+.scroll-container {
+  flex: 1; /* 화면을 가득 차도록 설정 */
+  overflow-y: auto; /* 스크롤 가능하게 설정 */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* 주문 목록 스타일 */
+.order-list {
+  margin: 20px 0;
+}
+
+.order-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 주문 입력 스타일 */
+.order-input {
+  margin-top: 20px;
+}
+
+.order-input input {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.order-input button {
+  padding: 10px 20px;
+  margin-bottom: 100px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.order-input button:hover {
+  background-color: #0056b3;
+}
+
+/* 반응형 처리 */
+@media (max-width: 600px) {
+  .date-tab {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .order-input input,
+  .order-input button {
+    width: 100%;
+  }
+}
